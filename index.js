@@ -10,3 +10,5 @@ function main(){
       context.drawImage(base_image, 0, 0);
   }
 }
+
+}
