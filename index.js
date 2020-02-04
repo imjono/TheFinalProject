@@ -6,8 +6,10 @@ function main(){
 
     base_image = new Image();
     base_image.src = 'Art/Andy Warhol/Warhol1.jpg';
+    base_image.width = 50;
+    base_image.height = 100;
     base_image.onload = function(){
-      context.drawImage(base_image, 0, 0, 5, 5);
+      context.drawImage(base_image, 10, 10);
   }
 }
 
