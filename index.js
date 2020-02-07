@@ -4,12 +4,17 @@ function main(){
   if (canvas.getContext) {
   var context = canvas.getContext('2d');
 
-    base_image = new Image();
-    base_image.src = 'Art/Andy Warhol/Warhol1.jpg';
-    base_image.width = 50;
-    base_image.height = 100;
-    base_image.onload = function(){
-      context.drawImage(base_image, 10, 10);
+    var francisBaconArray = [
+      "Art/Francis Bacon/Bacon1FRAME.jpg",
+      "Art/Francis Bacon/Bacon2FRAME.jpg",
+      "Art/Francis Bacon/Bacon3FRAME.jpg"
+    ]
+    francisBacon = new Image();
+    francisBacon.src = francisBaconArray[2];
+    
+    francisBacon.onload = function(){
+
+      context.drawImage(francisBacon, 10, 10, 300, 300);
   }
 }
 
