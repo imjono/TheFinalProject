@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <title></title>
     <style media="screen">
-    /* div.colorBackground{
+    div.colorBackground{
 
         position: absolute;
         left: 0px;
@@ -14,26 +14,27 @@
         width: 1500px;
         height: 450px;
         background-color: red;
-      } */
-
-      div.walkway{
-        position: absolute;
-        left: 0px;
-        top: 500px;
-        z-index: -1;
-        width: 1500px;
-        height: 100px;
-        background-color: grey;
-        transform: skewX(300deg);
       }
-    </style>
-  </head>
-  <body onload = "main()" >
-<div class = "colorBackground"></div>
-<div class = "walkway"></div>
+
+            div.walkway{
+              position: absolute;
+              left: 0px;
+              top: 500px;
+
+              width: 1500px;
+              height: 100px;
+              background-color: grey;
+              transform: skewX(300deg);
+            }
+          </style>
+        </head>
+        <body onload = "main()" >
 
 
-    <canvas id="canvas" width="1500" height="800"></canvas>
 
-  </body>
-</html>
+          <canvas id="canvas" width="1500" height="800"></canvas>
+          <div class = "colorBackground"></div>
+          <div class = "walkway"></div>
+
+        </body>
+      </html>

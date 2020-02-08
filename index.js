@@ -27,13 +27,13 @@ function main(){
 
 
 
-  bacon = new Image();
-  bacon.src = baconArray.src1;
+bacon = document.createElement("img"),
+  bacon.src = baconArray.src2;
 
-  picasso = new Image();
+picasso = document.createElement("img"),
   picasso.src = picassoArray.src1;
 
-  ernst = new Image();
+  ernst = document.createElement("img"),
   ernst.src = ernstArray.src1;
 
 bacon.onload = function(){
