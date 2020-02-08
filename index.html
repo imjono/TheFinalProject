@@ -4,8 +4,36 @@
     <script src="index.js"></script>
     <meta charset="utf-8">
     <title></title>
+    <style media="screen">
+    div.colorBackground{
+
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        z-index: -1;
+        width: 1500px;
+        height: 450px;
+        background-color: red;
+      }
+
+      div.walkway{
+        position: absolute;
+        left: 0px;
+        top: 500px;
+        z-index: -1;
+        width: 1500px;
+        height: 100px;
+        background-color: grey;
+        transform: skewX(300deg);
+      }
+    </style>
   </head>
-  <body onload = "main()">
-    <canvas id="canvas" width="1000" height="800"></canvas>
+  <body onload = "main()" >
+<div class = "colorBackground"></div>
+<div class = "walkway"></div>
+
+
+    <canvas id="canvas" width="1500" height="800"></canvas>
+
   </body>
 </html>
