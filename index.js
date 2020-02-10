@@ -4,11 +4,51 @@ function main(){
   if (canvas.getContext) {
   var context = canvas.getContext('2d');
 
-    base_image = new Image();
-    base_image.src = 'Art/Andy Warhol/Warhol1.jpg';
-    base_image.onload = function(){
-      context.drawImage(base_image, 0, 0);
-  }
+    var baconArray = {
+      src1 : "Art/Francis Bacon/Bacon1FRAME.jpg",
+      src2 : "Art/Francis Bacon/Bacon2FRAME.jpg",
+      src3 : "Art/Francis Bacon/Bacon3FRAME.jpg",
+      x1: 300, y1 : 300, x2 : 300, y2 : 300
+    }
+
+    var  picassoArray = {
+      src1 : "Art/Pablo Picasso/Picasso1FRAME.jpg",
+      src2 : "Art/Pablo Picasso/Picasso2FRAME.jpg",
+      src3 : "Art/Pablo Picasso/Picasso3FRAME.jpg",
+      x1: 300, y1 : 300, x2 : 300, y2 : 300
+    }
+
+    var  ernstArray = {
+      src1 : "Art/Max Ernst/Ernst1FRAME.jpg",
+      src2 : "Art/Max Ernsto/Ernst2FRAME.jpg",
+      src3 : "Art/Max Ernst/Ernst3FRAME.jpg",
+      x1: 300, y1 : 300, x2 : 300, y2 : 300
+    }
+
+
+
+bacon = document.createElement("img"),
+  bacon.src = baconArray.src2;
+
+picasso = document.createElement("img"),
+  picasso.src = picassoArray.src1;
+
+  ernst = document.createElement("img"),
+  ernst.src = ernstArray.src1;
+
+bacon.onload = function(){
+
+      context.drawImage(bacon, 50, 50, baconArray.x1, baconArray.y1);
+      context.drawImage(picasso, 450, 50, picassoArray.x1, picassoArray.y1)
+      context.drawImage(ernst, 850, 50, ernstArray.x1, ernstArray.y1)
+    }
+
+
+
+
+
 }
+
+
 
 }
