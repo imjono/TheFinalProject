@@ -104,28 +104,27 @@ function main(){
 
 
 
-bacon = document.createElement("img"),
+bacon = new Image();
   bacon.src = baconArray.src2;
 
-picasso = document.createElement("img"),
+picasso = new Image();
   picasso.src = picassoArray.src1;
 
-  ernst = document.createElement("img"),
+  ernst = new Image();
   ernst.src = ernstArray.src1;
 
 bacon.onload = function(){
-
       context.drawImage(bacon, 50, 50, baconArray.x1, baconArray.y1);
+    }
+picasso.onload = function(){
       context.drawImage(picasso, 450, 50, picassoArray.x1, picassoArray.y1)
+}
+ernst.onload = function(){
       context.drawImage(ernst, 850, 50, ernstArray.x1, ernstArray.y1)
     }
 
 
-
-
-
 }
-
 
 
 }
