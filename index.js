@@ -23,7 +23,7 @@ function main(){
       src4 : "Art/Francis Bacon/Bacon5FRAME.jpg",
       src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
       startX: 50, startY: 50,
-      wide: 300, high : 300, x2 : 300, y2 : 300
+      wide: 300, high : 300
     }
 
 
@@ -89,7 +89,8 @@ function main(){
       src4 : "Art/Pablo Picasso/Picasso4FRAME.jpg",
       src5 : "Art/Pablo Picasso/Picasso5FRAME.jpg",
       src6 : "Art/Pablo Picasso/Picasso6FRAME.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 450, startY: 50,
+      wide: 300, high : 300
     }
 
 
@@ -118,20 +119,50 @@ bacon.onload = function(){
       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
     }
 picasso.onload = function(){
-      context.drawImage(picasso, 450, 50, picassoArray.x1, picassoArray.y1)
+      context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high)
 }
 ernst.onload = function(){
       context.drawImage(ernst, 850, 50, ernstArray.x1, ernstArray.y1)
     }
 
-    canvas.onmouseover = function(evt){
+    canvas.onmousemove = function(evt){
       if(evt.x < baconArray.startX + baconArray.wide &&
         evt.x > baconArray.startX &&
         evt.y < baconArray.startY + baconArray.high &&
         evt.y  > baconArray.startY){
-      canvas.style.cursor = "grab";
-      alert("asdlfj");
+          canvas.style.cursor = "grab";
+
     }
+    else if(evt.x < picassoArray.startX + picassoArray.wide &&
+          evt.x > picassoArray.startX &&
+          evt.y < picassoArray.startY + picassoArray.high &&
+          evt.y  > picassoArray.startY){
+          canvas.style.cursor = "grab";
+    }
+          else{
+            canvas.style.cursor = "";
+          }
+    }
+
+
+
+
+  canvas.onclick = function(evt){
+      if(evt.x < baconArray.startX + baconArray.wide &&
+        evt.x > baconArray.startX &&
+        evt.y < baconArray.startY + baconArray.high &&
+        evt.y  > baconArray.startY){
+
+      location.href = 'bacon.html';
+    }
+    if(evt.x < picassoArray.startX + picassoArray.wide &&
+      evt.x > picassoArray.startX &&
+      evt.y < picassoArray.startY + picassoArray.high &&
+      evt.y  > picassoArray.startY){
+
+        alert('this will take you to picasso.html')
+  }
+
 
 
 
