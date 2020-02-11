@@ -22,7 +22,8 @@ function main(){
       src4 : "Art/Francis Bacon/Bacon4FRAME.jpg",
       src4 : "Art/Francis Bacon/Bacon5FRAME.jpg",
       src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 50, startY: 50,
+      wide: 300, high : 300, x2 : 300, y2 : 300
     }
 
 
@@ -114,7 +115,7 @@ picasso = new Image();
   ernst.src = ernstArray.src1;
 
 bacon.onload = function(){
-      context.drawImage(bacon, 50, 50, baconArray.x1, baconArray.y1);
+      context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
     }
 picasso.onload = function(){
       context.drawImage(picasso, 450, 50, picassoArray.x1, picassoArray.y1)
@@ -123,7 +124,20 @@ ernst.onload = function(){
       context.drawImage(ernst, 850, 50, ernstArray.x1, ernstArray.y1)
     }
 
+    canvas.onmouseover = function(evt){
+      if(evt.x < baconArray.startX + baconArray.wide &&
+        evt.x > baconArray.startX &&
+        evt.y < baconArray.startY + baconArray.high &&
+        evt.y  > baconArray.startY){
+      canvas.style.cursor = "grab";
+      alert("asdlfj");
+    }
 
+
+
+
+
+}
 }
 
 
