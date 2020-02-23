@@ -1,10 +1,55 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+
+    <script type="text/javascript">
+    function main(){
+      var canvas = document.getElementById('canvas');
+
+      if (canvas.getContext) {
+      var context = canvas.getContext('2d');
+    var baconArray = {
+      src1 : "Art/Francis Bacon/Bacon1FRAME.jpg",
+      src2 : "Art/Francis Bacon/Bacon2FRAME.jpg",
+      src3 : "Art/Francis Bacon/Bacon3FRAME.jpg",
+      src4 : "Art/Francis Bacon/Bacon4FRAME.jpg",
+      src4 : "Art/Francis Bacon/Bacon5FRAME.jpg",
+      src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
+      startX: 50, startY: 50,
+      wide: 300, high : 300
+    }
+    bacon1 = new Image();
+      bacon1.src = baconArray.src1;
+        bacon2 = new Image();
+      bacon2.src = baconArray.src3;
+        bacon3 = new Image();
+      bacon3.src = baconArray.src4;
+        bacon4 = new Image();
+      bacon4.src = baconArray.src5;
+
+    bacon1.onload = function(){
+          context.drawImage(bacon1, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
+        }
+    bacon2.onload = function(){
+          context.drawImage(bacon2, baconArray.startX + 350, baconArray.startY, baconArray.wide, baconArray.high);
+        }
+    bacon3.onload = function(){
+          context.drawImage(bacon3, baconArray.startX + 700, baconArray.startY, baconArray.wide, baconArray.high);
+        }
+    bacon4.onload = function(){
+          context.drawImage(bacon4, baconArray.startX + 1050, baconArray.startY, baconArray.wide, baconArray.high);
+        }
+
+
+
+  }
+  }
+    </script>
     <meta charset="utf-8">
     <title></title>
   </head>
-  <body>
-    <p>Hi</p>
+  <body onload = "main()">
+<canvas id="canvas" width="1500" height="800"></canvas>
+<p style = "left: 100; top: 1000; text-align: center;">Welcome to Francis Bacon's Studio</p>
   </body>
 </html>

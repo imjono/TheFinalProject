@@ -160,7 +160,7 @@ ernst.onload = function(){
       evt.y < picassoArray.startY + picassoArray.high &&
       evt.y  > picassoArray.startY){
 
-        alert('this will take you to picasso.html')
+      location.href = 'picasso.html'
   }
 
 
