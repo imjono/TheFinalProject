@@ -166,9 +166,110 @@ ernst.onload = function(){
 
 
 
-
-
 }
+}
+
+//NOTE: This piece of code was taken from a website. This does not actually affect the final outcome of
+//the game but it does make coding a lot easier.
+(function() {
+    var resourceCache = {};
+    var loading = [];
+    var readyCallbacks = [];
+
+    // Load an image url or an array of image urls
+    function load(urlOrArr) {
+        if(urlOrArr instanceof Array) {
+            urlOrArr.forEach(function(url) {
+                _load(url);
+            });
+        }
+        else {
+            _load(urlOrArr);
+        }
+    }
+
+    function _load(url) {
+        if(resourceCache[url]) {
+            return resourceCache[url];
+        }
+        else {
+            var img = new Image();
+            img.onload = function() {
+                resourceCache[url] = img;
+
+                if(isReady()) {
+                    readyCallbacks.forEach(function(func) { func(); });
+                }
+            };
+            resourceCache[url] = false;
+            img.src = url;
+        }
+    }
+
+    function get(url) {
+        return resourceCache[url];
+    }
+
+    function isReady() {
+        var ready = true;
+        for(var k in resourceCache) {
+            if(resourceCache.hasOwnProperty(k) &&
+               !resourceCache[k]) {
+                ready = false;
+            }
+        }
+        return ready;
+    }
+
+    function onReady(func) {
+        readyCallbacks.push(func);
+    }
+
+    window.resources = {
+        load: load,
+        get: get,
+        onReady: onReady,
+        isReady: isReady
+    };
+
+})();
+var lastTime;
+function main() {
+    var now = Date.now();
+    var dt = (now - lastTime) / 1000.0;
+
+    update(dt);
+    render();
+
+    lastTime = now;
+    requestAnimFrame(main);
+};
+
+resources.laod(['img/sprite.png']);
+//resources.onReady(init);  for background ignore for now
+
+var player = {
+    pos: [0, 0],
+    sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
+};
+
+
+function handleInput(dt) {
+    if(input.isDown('DOWN') || input.isDown('s')) {
+        player.pos[1] += playerSpeed * dt;
+    }
+
+    if(input.isDown('UP') || input.isDown('w')) {
+        player.pos[1] -= playerSpeed * dt;
+    }
+
+    if(input.isDown('LEFT') || input.isDown('a')) {
+        player.pos[0] -= playerSpeed * dt;
+    }
+
+    if(input.isDown('RIGHT') || input.isDown('d')) {
+        player.pos[0] += playerSpeed * dt;
+    }
 }
 
 
