@@ -1,6 +1,29 @@
 <!DOCTYPE html>
 <html lang="en" dir="ltr">
   <head>
+    <style media="screen">
+    p{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 200;
+      left: 800;
+      margin-right: 50%;
+      /* transform: translate(-50%, -50%) */
+    }
+    button{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 50%;
+    }
+          </style>
 
     <script type="text/javascript">
     function main(){
@@ -9,12 +32,12 @@
       if (canvas.getContext) {
       var context = canvas.getContext('2d');
     var baconArray = {
-      src1 : "Art/Francis Bacon/Bacon1FRAME.jpg",
-      src2 : "Art/Francis Bacon/Bacon2FRAME.jpg",
-      src3 : "Art/Francis Bacon/Bacon3FRAME.jpg",
-      src4 : "Art/Francis Bacon/Bacon4FRAME.jpg",
-      src4 : "Art/Francis Bacon/Bacon5FRAME.jpg",
-      src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
+      src1 : "Art/Francis bacon/bacon1FRAME.jpg",
+      src2 : "Art/Francis bacon/bacon2FRAME.jpg",
+      src3 : "Art/Francis bacon/bacon3FRAME.jpg",
+      src4 : "Art/Francis bacon/bacon4FRAME.jpg",
+      src4 : "Art/Francis bacon/bacon5FRAME.jpg",
+      src5 : "Art/Francis bacon/bacon6FRAME.jpg",
       startX: 50, startY: 50,
       wide: 300, high : 300
     }
@@ -43,13 +66,18 @@
 
 
   }
-  }
+}
+
+function back(){
+  location.href = "index.html"
+}
     </script>
     <meta charset="utf-8">
     <title></title>
   </head>
   <body onload = "main()">
-<canvas id="canvas" width="1500" height="800"></canvas>
-<p style = "left: 100; top: 1000; text-align: center;">Welcome to Francis Bacon's Studio</p>
+<canvas id="canvas" width="1500" height="600"></canvas>
+<p>Welcome to Francis Bacon's Studio</p>
+<button type="button" onclick = "back()"name="Back">&lt; Back</button>
   </body>
 </html>

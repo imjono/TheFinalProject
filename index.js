@@ -78,7 +78,8 @@ function main(){
       src4 : "Art/Max Ernst/Ernst4FRAME.jpg",
       src5 : "Art/Max Ernst/Ernst5FRAME.jpg",
       src6 : "Art/Max Ernst/Ernst6FRAME.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 450, startY: 50,
+      wide: 300, high : 300
     }
 
 
@@ -89,7 +90,7 @@ function main(){
       src4 : "Art/Pablo Picasso/Picasso4FRAME.jpg",
       src5 : "Art/Pablo Picasso/Picasso5FRAME.jpg",
       src6 : "Art/Pablo Picasso/Picasso6FRAME.jpg",
-      startX: 450, startY: 50,
+      startX: 850, startY: 50,
       wide: 300, high : 300
     }
 
@@ -122,7 +123,7 @@ picasso.onload = function(){
       context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high)
 }
 ernst.onload = function(){
-      context.drawImage(ernst, 850, 50, ernstArray.x1, ernstArray.y1)
+      context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
     }
 
     canvas.onmousemove = function(evt){
@@ -163,113 +164,21 @@ ernst.onload = function(){
       location.href = 'picasso.html'
   }
 
+  if(evt.x < ernstArray.startX + ernstArray.wide &&
+    evt.x > ernstArray.startX &&
+    evt.y < ernstArray.startY + ernstArray.high &&
+    evt.y  > ernstArray.startY){
+
+    location.href = 'ernst.html'
+}
+
+
+
+
 
 
 
 }
-}
-
-//NOTE: This piece of code was taken from a website. This does not actually affect the final outcome of
-//the game but it does make coding a lot easier.
-(function() {
-    var resourceCache = {};
-    var loading = [];
-    var readyCallbacks = [];
-
-    // Load an image url or an array of image urls
-    function load(urlOrArr) {
-        if(urlOrArr instanceof Array) {
-            urlOrArr.forEach(function(url) {
-                _load(url);
-            });
-        }
-        else {
-            _load(urlOrArr);
-        }
-    }
-
-    function _load(url) {
-        if(resourceCache[url]) {
-            return resourceCache[url];
-        }
-        else {
-            var img = new Image();
-            img.onload = function() {
-                resourceCache[url] = img;
-
-                if(isReady()) {
-                    readyCallbacks.forEach(function(func) { func(); });
-                }
-            };
-            resourceCache[url] = false;
-            img.src = url;
-        }
-    }
-
-    function get(url) {
-        return resourceCache[url];
-    }
-
-    function isReady() {
-        var ready = true;
-        for(var k in resourceCache) {
-            if(resourceCache.hasOwnProperty(k) &&
-               !resourceCache[k]) {
-                ready = false;
-            }
-        }
-        return ready;
-    }
-
-    function onReady(func) {
-        readyCallbacks.push(func);
-    }
-
-    window.resources = {
-        load: load,
-        get: get,
-        onReady: onReady,
-        isReady: isReady
-    };
-
-})();
-var lastTime;
-function main() {
-    var now = Date.now();
-    var dt = (now - lastTime) / 1000.0;
-
-    update(dt);
-    render();
-
-    lastTime = now;
-    requestAnimFrame(main);
-};
-
-resources.laod(['img/sprite.png']);
-//resources.onReady(init);  for background ignore for now
-
-var player = {
-    pos: [0, 0],
-    sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
-};
-
-
-function handleInput(dt) {
-    if(input.isDown('DOWN') || input.isDown('s')) {
-        player.pos[1] += playerSpeed * dt;
-    }
-
-    if(input.isDown('UP') || input.isDown('w')) {
-        player.pos[1] -= playerSpeed * dt;
-    }
-
-    if(input.isDown('LEFT') || input.isDown('a')) {
-        player.pos[0] -= playerSpeed * dt;
-    }
-
-    if(input.isDown('RIGHT') || input.isDown('d')) {
-        player.pos[0] += playerSpeed * dt;
-    }
 }
 
 
