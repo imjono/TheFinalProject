@@ -179,6 +179,43 @@ ernst.onload = function(){
 
 
 }
+    var lastTime;
+function main() {
+    var now = Date.now();
+    var dt = (now - lastTime) / 1000.0;
+
+    update(dt);
+    render();
+
+    lastTime = now;
+    requestAnimFrame(main);
+};
+    var player = {
+    pos: [0, 0],
+    sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
+};
+
+
+function handleInput(dt) {
+    if(input.isDown('DOWN') || input.isDown('s')) {
+        player.pos[1] += playerSpeed * dt;
+    }
+
+    if(input.isDown('UP') || input.isDown('w')) {
+        player.pos[1] -= playerSpeed * dt;
+    }
+
+    if(input.isDown('LEFT') || input.isDown('a')) {
+        player.pos[0] -= playerSpeed * dt;
+    }
+
+    if(input.isDown('RIGHT') || input.isDown('d')) {
+        player.pos[0] += playerSpeed * dt;
+    }
+}
+
+
+} 
 }
 
 
