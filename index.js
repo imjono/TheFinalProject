@@ -215,8 +215,5 @@ function handleInput(dt) {
 }
 
 
-} 
 }
-
-
 }
