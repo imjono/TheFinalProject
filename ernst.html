@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+    p{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 200;
+      left: 800;
+      margin-right: 50%;
+      /* transform: translate(-50%, -50%) */
+    }
+    button{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 50%;
+    }
+          </style>
+
+    <script type="text/javascript">
+    function main(){
+      var canvas = document.getElementById('canvas');
+
+      if (canvas.getContext) {
+      var context = canvas.getContext('2d');
+    var ernstArray = {
+      src1 : "Art/Max Ernst/Ernst1FRAME.jpg",
+      src2 : "Art/Max Ernst/Ernst2FRAME.jpg",
+      src3 : "Art/Max Ernst/Ernst3FRAME.jpg",
+      src4 : "Art/Max Ernst/Ernst4FRAME.jpg",
+      src4 : "Art/Max Ernst/Ernst5FRAME.jpg",
+      src5 : "Art/Max Ernst/Ernst6FRAME.jpg",
+      startX: 50, startY: 50,
+      wide: 300, high : 300
+    }
+    ernst1 = new Image();
+      ernst1.src = ernstArray.src1;
+        ernst2 = new Image();
+      ernst2.src = ernstArray.src3;
+        ernst3 = new Image();
+      ernst3.src = ernstArray.src4;
+        ernst4 = new Image();
+      ernst4.src = ernstArray.src5;
+
+    ernst1.onload = function(){
+          context.drawImage(ernst1, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high);
+        }
+    ernst2.onload = function(){
+          context.drawImage(ernst2, ernstArray.startX + 350, ernstArray.startY, ernstArray.wide, ernstArray.high);
+        }
+    ernst3.onload = function(){
+          context.drawImage(ernst3, ernstArray.startX + 700, ernstArray.startY, ernstArray.wide, ernstArray.high);
+        }
+    ernst4.onload = function(){
+          context.drawImage(ernst4, ernstArray.startX + 1050, ernstArray.startY, ernstArray.wide, ernstArray.high);
+        }
+
+
+
+  }
+}
+
+function back(){
+  location.href = "index.html"
+}
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload = "main()">
+<canvas id="canvas" width="1500" height="600"></canvas>
+<p>Welcome to Max Ernst's Studio</p>
+<button type="button" onclick = "back()"name="Back">&lt; Back</button>
+  </body>
+</html>
