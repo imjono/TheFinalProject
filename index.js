@@ -140,6 +140,12 @@ ernst.onload = function(){
           evt.y  > picassoArray.startY){
           canvas.style.cursor = "grab";
     }
+    else if(evt.x < ernstArray.startX + ernstArray.wide &&
+          evt.x > ernstArray.startX &&
+          evt.y < ernstArray.startY + ernstArray.high &&
+          evt.y  > ernstArray.startY){
+          canvas.style.cursor = "grab";
+    }
           else{
             canvas.style.cursor = "";
           }
