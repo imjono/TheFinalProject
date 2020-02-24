@@ -111,10 +111,10 @@ bacon = new Image();
   bacon.src = baconArray.src2;
 
 picasso = new Image();
-  picasso.src = picassoArray.src1;
+  picasso.src = picassoArray.src2;
 
   ernst = new Image();
-  ernst.src = ernstArray.src1;
+  ernst.src = ernstArray.src2;
 
 bacon.onload = function(){
       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
