@@ -45,7 +45,8 @@ function main(){
       src4 : "Art/Jackson Pollock/Pollock4.jpg",
       src5 : "Art/Jackson Pollock/Pollock5.jpg",
       src6 : "Art/Jackson Pollock/Pollock6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 1250, startY: 50,
+      wide: 300, high : 300
     }
 
 
@@ -102,7 +103,8 @@ function main(){
       src4 : "Art/Richard Avedon/Avedon4.jpg",
       src5 : "Art/Richard Avedon/Avedon5.jpg",
       src6 : "Art/Richard Avedon/Avedon6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 1650, startY: 50,
+      wide: 300, high : 300
     }
 
 
@@ -116,6 +118,12 @@ picasso = new Image();
   ernst = new Image();
   ernst.src = ernstArray.src2;
 
+  pollock = new Image();
+  pollock.src = pollockArray.src2;
+
+  avedon = new Image();
+  avedon.src = avedonArray.src2;
+
 bacon.onload = function(){
       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
     }
@@ -125,6 +133,13 @@ picasso.onload = function(){
 ernst.onload = function(){
       context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
     }
+pollock.onload = function(){
+      context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high)
+}
+avedon.onload = function(){
+      context.drawImage(avedon, avedonArray.startX, avedonArray.startY, avedonArray.wide, avedonArray.high)
+}
+
 
     canvas.onmousemove = function(evt){
       if(evt.x < baconArray.startX + baconArray.wide &&
