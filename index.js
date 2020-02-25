@@ -1,4 +1,4 @@
-function main(){
+function main(event){
   var canvas = document.getElementById('canvas');
 
   if (canvas.getContext) {
@@ -193,6 +193,21 @@ avedon.onload = function(){
     location.href = 'ernst.html'
 }
 
+if(evt.x < pollockArray.startX + pollockArray.wide &&
+  evt.x > pollockArray.startX &&
+  evt.y < pollockArray.startY + pollockArray.high &&
+  evt.y  > pollockArray.startY){
+    alert('this will take you to pollock.html')
+}
+
+
+
+
+
+
+
+
+
 
 
 
@@ -200,6 +215,14 @@ avedon.onload = function(){
 
 
 }
+canvas.onmousemove = function(event){
+  var x = window.event.screenX;
+  if(x > 1100){
+    pollockArray.startX -=100;
+  }
+}
+
+
     var lastTime;
 function main() {
     var now = Date.now();
