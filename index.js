@@ -4,6 +4,8 @@ function main(event){
   if (canvas.getContext) {
   var context = canvas.getContext('2d');
 
+
+
     var warholArray = {
       src1 : "Art/Andy Warhol/Warhol1.jpg",
       src2 : "Art/Andy Warhol/Warhol2.jpg",
@@ -118,11 +120,11 @@ picasso = new Image();
   ernst = new Image();
   ernst.src = ernstArray.src2;
 
-  pollock = new Image();
-  pollock.src = pollockArray.src2;
-
-  avedon = new Image();
-  avedon.src = avedonArray.src2;
+  // pollock = new Image();
+  // pollock.src = pollockArray.src2;
+  //
+  // avedon = new Image();
+  // avedon.src = avedonArray.src2;
 
 bacon.onload = function(){
       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
@@ -133,12 +135,12 @@ picasso.onload = function(){
 ernst.onload = function(){
       context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
     }
-pollock.onload = function(){
-      context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high)
-}
-avedon.onload = function(){
-      context.drawImage(avedon, avedonArray.startX, avedonArray.startY, avedonArray.wide, avedonArray.high)
-}
+// pollock.onload = function(){
+//       context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high)
+// }
+// avedon.onload = function(){
+//       context.drawImage(avedon, avedonArray.startX, avedonArray.startY, avedonArray.wide, avedonArray.high)
+// }
 
 
     canvas.onmousemove = function(evt){
@@ -200,6 +202,12 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
     alert('this will take you to pollock.html')
 }
 
+var move = new Image();
+move.src = "sprite.png";
+
+context.drawImage(move,0,0, 200, 120, 0, 0, 120,120)
+
+
 
 
 
@@ -215,12 +223,13 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
 
 
 }
-canvas.onmousemove = function(event){
-  var x = window.event.screenX;
-  if(x > 1100){
-    pollockArray.startX -=100;
-  }
+  canvas.onmousemove = function(event){
+var x = window.event.screenX;
+if(x > 1300){
+  alert('this may take you to another page')
 }
+}
+
 
 
     var lastTime;
@@ -256,6 +265,18 @@ function handleInput(dt) {
     if(input.isDown('RIGHT') || input.isDown('d')) {
         player.pos[0] += playerSpeed * dt;
     }
+}
+
+setInterval(dostuff,33);
+function dostuff(){
+  clearbackground();
+  draw();
+}
+
+function clearbackground(){
+  console.log("clback");
+  ctx.fillStyle = "white";
+  ctx.fillRect( 0, 0, canvas.width, canvas.height);
 }
 
 
