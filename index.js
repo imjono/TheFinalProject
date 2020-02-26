@@ -144,6 +144,7 @@ ernst.onload = function(){
 
 
     canvas.onmousemove = function(evt){
+            var x = window.event.screenX;
       if(evt.x < baconArray.startX + baconArray.wide &&
         evt.x > baconArray.startX &&
         evt.y < baconArray.startY + baconArray.high &&
@@ -162,6 +163,11 @@ ernst.onload = function(){
           evt.y < ernstArray.startY + ernstArray.high &&
           evt.y  > ernstArray.startY){
           canvas.style.cursor = "grab";
+    }
+
+
+      else if(x > 1300){
+       alert('this may take you to another page')
     }
           else{
             canvas.style.cursor = "";
@@ -223,62 +229,59 @@ context.drawImage(move,0,0, 200, 120, 0, 0, 120,120)
 
 
 }
-  canvas.onmousemove = function(event){
-var x = window.event.screenX;
-if(x > 1300){
-  alert('this may take you to another page')
-}
-}
 
 
 
-    var lastTime;
-function main() {
-    var now = Date.now();
-    var dt = (now - lastTime) / 1000.0;
 
-    update(dt);
-    render();
+//     var lastTime;
+// function main() {
+//     var now = Date.now();
+//     var dt = (now - lastTime) / 1000.0;
+//
+//     update(dt);
+//     render();
+//
+//     lastTime = now;
+//     requestAnimFrame(main);
+// };
+//     var player = {
+//     pos: [0, 0],
+//     sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
+// };
+//
+//
+// function handleInput(dt) {
+//     if(input.isDown('DOWN') || input.isDown('s')) {
+//         player.pos[1] += playerSpeed * dt;
+//     }
+//
+//     if(input.isDown('UP') || input.isDown('w')) {
+//         player.pos[1] -= playerSpeed * dt;
+//     }
+//
+//     if(input.isDown('LEFT') || input.isDown('a')) {
+//         player.pos[0] -= playerSpeed * dt;
+//     }
+//
+//     if(input.isDown('RIGHT') || input.isDown('d')) {
+//         player.pos[0] += playerSpeed * dt;
+//     }
+// }
 
-    lastTime = now;
-    requestAnimFrame(main);
-};
-    var player = {
-    pos: [0, 0],
-    sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
-};
-
-
-function handleInput(dt) {
-    if(input.isDown('DOWN') || input.isDown('s')) {
-        player.pos[1] += playerSpeed * dt;
-    }
-
-    if(input.isDown('UP') || input.isDown('w')) {
-        player.pos[1] -= playerSpeed * dt;
-    }
-
-    if(input.isDown('LEFT') || input.isDown('a')) {
-        player.pos[0] -= playerSpeed * dt;
-    }
-
-    if(input.isDown('RIGHT') || input.isDown('d')) {
-        player.pos[0] += playerSpeed * dt;
-    }
-}
-
-setInterval(dostuff,33);
-function dostuff(){
-  clearbackground();
-  draw();
-}
-
-function clearbackground(){
-  console.log("clback");
-  ctx.fillStyle = "white";
-  ctx.fillRect( 0, 0, canvas.width, canvas.height);
-}
-
+// setInterval(dostuff,33);
+// function dostuff(){
+//   clearbackground();
+//   draw();
+// }
+//
+// function clearbackground(){
+//   console.log("clback");
+//   context.fillStyle = "white";
+//   context.fillRect( 0, 0, canvas.width, canvas.height);
+// }
+// function draw(){
+//
+// }
 
 }
 }
