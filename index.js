@@ -246,7 +246,7 @@ context.drawImage(move,0,0, 200, 120, 0, 0, 120,120)
 // };
 //     var player = {
 //     pos: [0, 0],
-//     sprite: new Sprite('img/sprite.png', [0, 0], [39, 39], 16, [0, 1])
+
 // };
 //
 //
