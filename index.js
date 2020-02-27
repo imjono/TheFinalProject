@@ -1,11 +1,36 @@
 function main(event){
   var canvas = document.getElementById('canvas');
+  setInterval(dostuff,33);
+  function dostuff(){
+    clearbackground();
+    draw();
+    go();
+  }
+  //
+
 
   if (canvas.getContext) {
   var context = canvas.getContext('2d');
 
+  function clearbackground(){
+    console.log("clback");
+    context.fillStyle = "white";
+    context.fillRect( 0, 0, canvas.width, canvas.height);
+  }
+  function draw(){
+    var move = new Image();
+    move.src = "sprite.png";
+    var x = 0, onX = 0;
+    move.onload = function(){
+    context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
+    x+=635/2;
+    // x%=720
+    onX +=10;
+  }
 
 
+  }
+function go(){
     var warholArray = {
       src1 : "Art/Andy Warhol/Warhol1.jpg",
       src2 : "Art/Andy Warhol/Warhol2.jpg",
@@ -126,6 +151,8 @@ picasso = new Image();
   // avedon = new Image();
   // avedon.src = avedonArray.src2;
 
+
+
 bacon.onload = function(){
       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
     }
@@ -208,10 +235,7 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
     alert('this will take you to pollock.html')
 }
 
-var move = new Image();
-move.src = "sprite.png";
 
-context.drawImage(move,0,0, 200, 120, 0, 0, 120,120)
 
 
 
@@ -268,20 +292,7 @@ context.drawImage(move,0,0, 200, 120, 0, 0, 120,120)
 //     }
 // }
 
-// setInterval(dostuff,33);
-// function dostuff(){
-//   clearbackground();
-//   draw();
-// }
-//
-// function clearbackground(){
-//   console.log("clback");
-//   context.fillStyle = "white";
-//   context.fillRect( 0, 0, canvas.width, canvas.height);
-// }
-// function draw(){
-//
-// }
-
 }
+}
+
 }
