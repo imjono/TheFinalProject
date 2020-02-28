@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+    p{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 200;
+      left: 800;
+      margin-right: 50%;
+      /* transform: translate(-50%, -50%) */
+    }
+    button{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 50%;
+    }
+          </style>
+
+    <script type="text/javascript">
+    function main(){
+      var canvas = document.getElementById('canvas');
+
+      if (canvas.getContext) {
+      var context = canvas.getContext('2d');
+    var pollockArray = {
+      src1 : "Art/Jackson pollock/pollock1FRAME.jpg",
+      src2 : "Art/Jackson pollock/pollock2FRAME.jpg",
+      src3 : "Art/Jackson pollock/pollock3FRAME.jpg",
+      src4 : "Art/Jackson Pollock/pollock/pollock4FRAME.jpg",
+      src4 : "Art/Jackson pollock/pollock5FRAME.jpg",
+      src5 : "Art/Jackson pollock/pollock6FRAME.jpg",
+      startX: 50, startY: 50,
+      wide: 300, high : 300
+    }
+    pollock1 = new Image();
+      pollock1.src = pollockArray.src1;
+        pollock2 = new Image();
+      pollock2.src = pollockArray.src3;
+        pollock3 = new Image();
+      pollock3.src = pollockArray.src4;
+        pollock4 = new Image();
+      pollock4.src = pollockArray.src5;
+
+    pollock1.onload = function(){
+          context.drawImage(pollock1, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high);
+        }
+    pollock2.onload = function(){
+          context.drawImage(pollock2, pollockArray.startX + 350, pollockArray.startY, pollockArray.wide, pollockArray.high);
+        }
+    pollock3.onload = function(){
+          context.drawImage(pollock3, pollockArray.startX + 700, pollockArray.startY, pollockArray.wide, pollockArray.high);
+        }
+    pollock4.onload = function(){
+          context.drawImage(pollock4, pollockArray.startX + 1050, pollockArray.startY, pollockArray.wide, pollockArray.high);
+        }
+
+
+
+  }
+}
+
+function back(){
+  location.href = "index.html"
+}
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload = "main()">
+<canvas id="canvas" width="1500" height="600"></canvas>
+<p>Welcome to Jackson Pollock's Studio</p>
+<button type="button" onclick = "back()"name="Back">&lt; Back</button>
+  </body>
+</html>
