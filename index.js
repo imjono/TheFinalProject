@@ -1,11 +1,14 @@
 function main(event){
   var canvas = document.getElementById('canvas');
   setInterval(dostuff,33);
+  var x = 0, onX = 0;
+
   function dostuff(){
     clearbackground();
     draw();
-    go();
+
   }
+
   //
 
 
@@ -20,13 +23,12 @@ function main(event){
   function draw(){
     var move = new Image();
     move.src = "sprite.png";
-    var x = 0, onX = 0;
     move.onload = function(){
     context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
-    x+=635/2;
-    // x%=720
+    x+=1142/12;
+    x%=720
     onX +=10;
-  }
+    }
 
 
   }
