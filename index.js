@@ -1,19 +1,20 @@
 function main(event){
   var canvas = document.getElementById('canvas');
-  setInterval(dostuff,33);
+  var context = canvas.getContext('2d');
+  var move = new Image();
+  move.src = "sprite.png";
+
   var x = 0, onX = 0;
+  setInterval(dostuff,33);
 
   function dostuff(){
     clearbackground();
+  //  updateStuff();
     draw();
-
+    go();
   }
 
-  //
 
-
-  if (canvas.getContext) {
-  var context = canvas.getContext('2d');
 
   function clearbackground(){
     console.log("clback");
@@ -21,18 +22,18 @@ function main(event){
     context.fillRect( 0, 0, canvas.width, canvas.height);
   }
   function draw(){
-    var move = new Image();
-    move.src = "sprite.png";
-    move.onload = function(){
+    context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
+
     context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
     x+=1142/12;
-    x%=720
+    x%=1142;
     onX +=10;
-    }
+    
+
 
 
   }
-function go(){
+
     var warholArray = {
       src1 : "Art/Andy Warhol/Warhol1.jpg",
       src2 : "Art/Andy Warhol/Warhol2.jpg",
@@ -237,23 +238,6 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
     alert('this will take you to pollock.html')
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
 
 
@@ -293,8 +277,8 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
 //         player.pos[0] += playerSpeed * dt;
 //     }
 // }
+function go(){
+}
 
-}
-}
 
 }
