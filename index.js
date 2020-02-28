@@ -23,12 +23,14 @@ function main(event){
   }
   function draw(){
     context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
+    context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high);
+    context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
 
     context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
     x+=1142/12;
     x%=1142;
     onX +=10;
-    
+
 
 
 
