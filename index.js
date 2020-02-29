@@ -5,7 +5,7 @@ function main(event){
   move.src = "sprite.png";
 
   var x = 0, onX = 0;
-  var bool = "true";
+  var state = "left";
   setInterval(dostuff,100);
 
   function dostuff(){
@@ -26,16 +26,23 @@ function main(event){
     context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high);
     context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
 
-    context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
 
-    if (bool == "true"){
+
+    if (state == "left"){
+      context.drawImage(move,x,635/4,1142/12,635/4, onX, 500, 250,200)
     x+=1142/12;
     x%=1142;
-  }
-  if(bool == "false"){
-    bool == "true";
-    x = 285.5;
-  }
+    }
+    if(state == "right"){
+      context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
+      x+=1142/12;
+      x%=1142;
+    }
+    if(state == "stop"){
+
+        context.drawImage(move,285.5,635/2,1142/12,635/4, onX, 500, 250,200)
+      }
+
 
 
 
@@ -284,25 +291,25 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
 //         player.pos[0] += playerSpeed * dt;
 //     }
 // }
-if(bool == "true"){
+if(state == "left"){
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
-        bool = "true";
+        state = "left";
         onX -=30;
       }
       else if(event.keyCode == 68) {
-              bool = "true";
+              state = "right";
               onX +=30;
       }
 
   });
   document.addEventListener('keyup', function(event){
-      bool = "false";
+      state = "stop";
   });
 
 }
 else {
-  bool = "false";
+  state = "stop";
   }
 
 
