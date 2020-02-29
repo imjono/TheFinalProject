@@ -22,7 +22,7 @@ function main(event){
     context.fillRect( 0, 0, canvas.width, canvas.height);
   }
   function draw(){
-    context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
+    context.drawImage(warhol, warholArray.startX, warholArray.startY, warholArray.wide, warholArray.high);
     context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high);
     context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
 
@@ -59,7 +59,8 @@ function main(event){
       src4 : "Art/Andy Warhol/Warhol4.jpg",
       src5 : "Art/Andy Warhol/Warhol5.jpg",
       src6 : "Art/Andy Warhol/Warhol6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
+      startX: 850, startY: 50,
+      wide: 300, high : 300
     }
 
 
@@ -157,8 +158,8 @@ function main(event){
 
 
 
-bacon = new Image();
-  bacon.src = baconArray.src2;
+warhol = new Image();
+  warhol.src = warholArray.src2;
 
 picasso = new Image();
   picasso.src = picassoArray.src2;
@@ -174,8 +175,8 @@ picasso = new Image();
 
 
 
-// bacon.onload = function(){
-//       context.drawImage(bacon, baconArray.startX, baconArray.startY, baconArray.wide, baconArray.high);
+// warhol.onload = function(){
+//       context.drawImage(warhol, warholArray.startX, warholArray.startY, warholArray.wide, warholArray.high);
 //     }
 // picasso.onload = function(){
 //       context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high)
