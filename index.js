@@ -38,10 +38,12 @@ function main(event){
       x+=1142/12;
       x%=1142;
     }
-    if(state == "stop"){
+    if(state == "right-stop")
+        context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, onX, 500, 250,200)
+    if(state == "left-stop")
+      context.drawImage(move,1142/12 *10,635/4,1142/12,635/4, onX, 500, 250,200)
 
-        context.drawImage(move,285.5,635/2,1142/12,635/4, onX, 500, 250,200)
-      }
+
 
 
 
@@ -291,7 +293,7 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
 //         player.pos[0] += playerSpeed * dt;
 //     }
 // }
-if(state == "left"){
+
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
         state = "left";
@@ -304,13 +306,16 @@ if(state == "left"){
 
   });
   document.addEventListener('keyup', function(event){
-      state = "stop";
+    if(state == "left")
+      state = "left-stop";
+    if(state == "right")
+      state = "right-stop"
   });
 
-}
-else {
-  state = "stop";
-  }
+
+// else {
+//   state = "stop";
+//   }
 
 
 }
