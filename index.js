@@ -5,7 +5,7 @@ function main(event){
   move.src = "sprite.png";
 
   var x = 0, onX = 0;
-  var state = "left";
+  var state = "right-stop";
   setInterval(dostuff,100);
 
   function dostuff(){
