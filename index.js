@@ -5,13 +5,12 @@ function main(event){
   move.src = "sprite.png";
 
   var x = 0, onX = 0;
-  setInterval(dostuff,33);
+  setInterval(dostuff,100);
 
   function dostuff(){
     clearbackground();
   //  updateStuff();
     draw();
-    go();
   }
 
 
@@ -29,7 +28,7 @@ function main(event){
     context.drawImage(move,x,635/2,1142/12,635/4, onX, 500, 250,200)
     x+=1142/12;
     x%=1142;
-    onX +=10;
+
 
 
 
@@ -279,8 +278,19 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
 //         player.pos[0] += playerSpeed * dt;
 //     }
 // }
-function go(){
-}
+
+  document.addEventListener('keydown', function(event) {
+      if(event.keyCode == 65) {
+              onX -=40;
+      }
+      else if(event.keyCode == 68) {
+              onX +=40;
+      }
+      else {
+        x +=0;
+      }
+  });
+
 
 
 }
