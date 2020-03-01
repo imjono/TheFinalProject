@@ -4,9 +4,9 @@ function main(event){
   var move = new Image();
   move.src = "sprite.png";
 
-  var x = 0, onX = 0;
+  var x = 0, onX = 200;
   var state = "right-stop";
-  setInterval(dostuff,100);
+  setInterval(dostuff,150);
 
   function dostuff(){
     clearbackground();
@@ -42,8 +42,8 @@ function main(event){
         context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, onX, 500, 250,200)
     if(state == "left-stop")
       context.drawImage(move,1142/12 *10,635/4,1142/12,635/4, onX, 500, 250,200)
-    if(onX > 1000)
-      location.href = "secondIndex.html"
+    if(onX < 100)
+      location.href = "index.html"
 
 
 
