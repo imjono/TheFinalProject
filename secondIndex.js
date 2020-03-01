@@ -6,7 +6,7 @@ function main(event){
 
   var x = 0, onX = 200;
   var state = "right-stop";
-  setInterval(dostuff,150);
+  setInterval(dostuff,100);
 
   function dostuff(){
     clearbackground();
