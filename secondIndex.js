@@ -1,8 +1,9 @@
-function main(event){
+function main(int, event){
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
   var move = new Image();
   move.src = "sprite.png";
+  console.log(int)
 
   var x = 0, onX = 200;
   var state = "right-stop";
@@ -25,7 +26,7 @@ function main(event){
   function draw(){
     context.drawImage(warhol, warholArray.startX, warholArray.startY, warholArray.wide, warholArray.high);
     context.drawImage(condo, condoArray.startX, condoArray.startY, condoArray.wide, condoArray.high);
-    // context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high);
+    context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high);
 
 
 
@@ -46,7 +47,7 @@ function main(event){
       context.drawImage(move,1142/12 *10,635/4,1142/12,635/4, onX, 500, 250,200)
 
     if(onX < 100)
-      location.href = "index.html"
+      location.href = "index.html?from=secondIndex"
 
 
 
@@ -62,7 +63,7 @@ function main(event){
       src4 : "Art/Andy Warhol/Warhol4.jpg",
       src5 : "Art/Andy Warhol/Warhol5.jpg",
       src6 : "Art/Andy Warhol/Warhol6.jpg",
-      startX: 850, startY: 50,
+      startX: 50, startY: 50,
       wide: 300, high : 300
     }
 
@@ -73,7 +74,7 @@ function main(event){
           src4 : "Art/George Condo/Condo4.jpg",
           src5 : "Art/George Condo/Condo5.jpg",
           src6 : "Art/George Condo/Condo6.jpg",
-          startX: 850, startY: 50,
+          startX: 450, startY: 50,
           wide: 300, high : 300
         }
 
@@ -86,7 +87,7 @@ function main(event){
       src4 : "Art/Jackson Pollock/Pollock4.jpg",
       src5 : "Art/Jackson Pollock/Pollock5.jpg",
       src6 : "Art/Jackson Pollock/Pollock6.jpg",
-      startX: 1250, startY: 50,
+      startX: 850, startY: 50,
       wide: 300, high : 300
     }
 
@@ -114,19 +115,6 @@ function main(event){
     }
 
 
-    var  ernstArray = {
-      src1 : "Art/Max Ernst/Ernst1FRAME.png",
-      src2 : "Art/Max Ernst/Ernst2FRAME.png",
-      src3 : "Art/Max Ernst/Ernst3FRAME.jpg",
-      src4 : "Art/Max Ernst/Ernst4FRAME.jpg",
-      src5 : "Art/Max Ernst/Ernst5FRAME.jpg",
-      src6 : "Art/Max Ernst/Ernst6FRAME.jpg",
-      startX: 450, startY: 50,
-      wide: 300, high : 300
-    }
-
-
-
 
     var avedonArray = {
       src1 : "Art/Richard Avedon/Avedon1.jpg",
@@ -147,11 +135,11 @@ warhol = new Image();
 condo = new Image();
   condo.src = condoArray.src2;
 
-  // ernst = new Image();
-  // ernst.src = ernstArray.src2;
-
   // pollock = new Image();
   // pollock.src = pollockArray.src2;
+
+  pollock = new Image();
+  pollock.src = pollockArray.src2;
   //
   // avedon = new Image();
   // avedon.src = avedonArray.src2;
@@ -164,11 +152,10 @@ condo = new Image();
 // condo.onload = function(){
 //       context.drawImage(condo, condoArray.startX, condoArray.startY, condoArray.wide, condoArray.high)
 // }
-// ernst.onload = function(){
-//       context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
+// pollock.onload = function(){
+//       context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high)
 //     }
 
-alert('asdf')
 
     canvas.onmousemove = function(evt){
             var x = window.event.screenX;
@@ -185,12 +172,12 @@ alert('asdf')
           evt.y  > condoArray.startY){
           canvas.style.cursor = "grab";
     }
-    // else if(evt.x < ernstArray.startX + ernstArray.wide &&
-    //       evt.x > ernstArray.startX &&
-    //       evt.y < ernstArray.startY + ernstArray.high &&
-    //       evt.y  > ernstArray.startY){
-    //       canvas.style.cursor = "grab";
-    // }
+    else if(evt.x < pollockArray.startX + pollockArray.wide &&
+          evt.x > pollockArray.startX &&
+          evt.y < pollockArray.startY + pollockArray.high &&
+          evt.y  > pollockArray.startY){
+          canvas.style.cursor = "grab";
+    }
 
 
 
@@ -220,13 +207,13 @@ alert('asdf')
       location.href = 'condo.html'
   }
 
-//   if(evt.x < ernstArray.startX + ernstArray.wide &&
-//     evt.x > ernstArray.startX &&
-//     evt.y < ernstArray.startY + ernstArray.high &&
-//     evt.y  > ernstArray.startY){
-//
-//     location.href = 'ernst.html'
-// }
+  if(evt.x < pollockArray.startX + pollockArray.wide &&
+    evt.x > pollockArray.startX &&
+    evt.y < pollockArray.startY + pollockArray.high &&
+    evt.y  > pollockArray.startY){
+
+    location.href = 'pollock.html'
+}
 
 // if(evt.x < pollockArray.startX + pollockArray.wide &&
 //   evt.x > pollockArray.startX &&

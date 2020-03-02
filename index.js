@@ -6,8 +6,18 @@ function main(it, event){
 
   it = "5"
 
+
   var x = 0, onX = 0;
   var state = "right-stop";
+
+  var queryString = new URLSearchParams(window.location.search);
+  if(queryString.get("from")){
+    onX = 900;
+    state = "left-stop"
+  }
+
+
+
   setInterval(dostuff,100);
 
   function dostuff(){
@@ -197,11 +207,11 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
         state = "left";
-        onX -=500;
+        onX -=30;
       }
       else if(event.keyCode == 68) {
               state = "right";
-              onX +=500;
+              onX +=30;
       }
 
   });
