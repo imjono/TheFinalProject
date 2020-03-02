@@ -1,9 +1,8 @@
-function main(int, event){
+function main(event){
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
   var move = new Image();
-  move.src = "sprite.png";
-  console.log(int)
+  move.src = "sprite.png"
 
   var x = 0, onX = 200;
   var state = "right-stop";

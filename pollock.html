@@ -29,24 +29,23 @@
     function main(){
       var canvas = document.getElementById('canvas');
 
-      if (canvas.getContext) {
       var context = canvas.getContext('2d');
     var pollockArray = {
-      src1 : "Art/Jackson pollock/pollock1FRAME.jpg",
-      src2 : "Art/Jackson pollock/pollock2FRAME.jpg",
-      src3 : "Art/Jackson pollock/pollock3FRAME.jpg",
-      src4 : "Art/Jackson Pollock/pollock/pollock4FRAME.jpg",
-      src4 : "Art/Jackson pollock/pollock5FRAME.jpg",
-      src5 : "Art/Jackson pollock/pollock6FRAME.jpg",
+      src1 : "Art/Jackson pollock/pollok1.jpg",
+      src2 : "Art/Jackson pollock/pollock2.jpg",
+      src3 : "Art/Jackson pollock/pollock3.jpg",
+      src4 : "Art/Jackson pollock/pollock4.jpg",
+      src4 : "Art/Jackson pollock/pollock5.jpg",
+      src5 : "Art/Jackson pollock/pollock6.jpg",
       startX: 50, startY: 50,
       wide: 300, high : 300
     }
     pollock1 = new Image();
-      pollock1.src = pollockArray.src1;
+    pollock1.src = pollockArray.src1;
         pollock2 = new Image();
       pollock2.src = pollockArray.src3;
         pollock3 = new Image();
-      pollock3.src = pollockArray.src4;
+    pollock3.src = pollockArray.src4;
         pollock4 = new Image();
       pollock4.src = pollockArray.src5;
 
@@ -65,11 +64,11 @@
 
 
 
-  }
+
 }
 
 function back(){
-  location.href = "index.html"
+  location.href = "secondIndex.html"
 }
     </script>
     <meta charset="utf-8">

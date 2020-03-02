@@ -54,7 +54,7 @@ function main(it, event){
         context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, onX, 500, 250,200)
     if(state == "left-stop")
       context.drawImage(move,1142/12 *10,635/4,1142/12,635/4, onX, 500, 250,200)
-    if(onX > 1000)
+    if(onX > canvas.width - 400)
       location.href = "secondIndex.html"
 
 

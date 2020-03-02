@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <style media="screen">
+    p{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 200;
+      left: 800;
+      margin-right: 50%;
+      /* transform: translate(-50%, -50%) */
+    }
+    button{
+      background: black;
+      color: white;
+      border-radius: 1em;
+      padding: 1em;
+      position: absolute;
+      top: 0;
+      left: 0;
+      margin-right: 50%;
+    }
+          </style>
+
+    <script type="text/javascript">
+    function main(){
+      var canvas = document.getElementById('canvas');
+
+      var context = canvas.getContext('2d');
+    var condoArray = {
+      src1 : "Art/George Condo/Condo1.png",
+      src2 : "Art/George Condo/Condo2.png",
+      src3 : "Art/George Condo/Condo3.jpg",
+      src4 : "Art/George Condo/Condo4.jpg",
+      src4 : "Art/George Condo/Condo5.jpg",
+      src5 : "Art/George Condo/Condo6.jpg",
+      startX: 50, startY: 50,
+      wide: 300, high : 300
+    }
+    condo1 = new Image();
+    condo1.src = condoArray.src1;
+        condo2 = new Image();
+      condo2.src = condoArray.src3;
+        condo3 = new Image();
+    condo3.src = condoArray.src4;
+        condo4 = new Image();
+      condo4.src = condoArray.src5;
+
+    condo1.onload = function(){
+          context.drawImage(condo1, condoArray.startX, condoArray.startY, condoArray.wide, condoArray.high);
+        }
+    condo2.onload = function(){
+          context.drawImage(condo2, condoArray.startX + 350, condoArray.startY, condoArray.wide, condoArray.high);
+        }
+    condo3.onload = function(){
+          context.drawImage(condo3, condoArray.startX + 700, condoArray.startY, condoArray.wide, condoArray.high);
+        }
+    condo4.onload = function(){
+          context.drawImage(condo4, condoArray.startX + 1050, condoArray.startY, condoArray.wide, condoArray.high);
+        }
+
+
+
+
+}
+
+function back(){
+  location.href = "secondIndex.html"
+}
+    </script>
+    <meta charset="utf-8">
+    <title></title>
+  </head>
+  <body onload = "main()">
+<canvas id="canvas" width="1500" height="600"></canvas>
+<p>Welcome to George Condo's Studio</p>
+<button type="button" onclick = "back()"name="Back">&lt; Back</button>
+  </body>
+</html>
