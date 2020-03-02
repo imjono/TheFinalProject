@@ -1,8 +1,10 @@
-function main(event){
+function main(it, event){
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
   var move = new Image();
   move.src = "sprite.png";
+
+  it = "5"
 
   var x = 0, onX = 0;
   var state = "right-stop";
@@ -51,18 +53,6 @@ function main(event){
 
 
   }
-
-    var warholArray = {
-      src1 : "Art/Andy Warhol/Warhol1.jpg",
-      src2 : "Art/Andy Warhol/Warhol2.jpg",
-      src3 : "Art/Andy Warhol/Warhol3.jpg",
-      src4 : "Art/Andy Warhol/Warhol4.jpg",
-      src5 : "Art/Andy Warhol/Warhol5.jpg",
-      src6 : "Art/Andy Warhol/Warhol6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
-    }
-
-
     var baconArray = {
       src1 : "Art/Francis Bacon/Bacon1FRAME.jpg",
       src2 : "Art/Francis Bacon/Bacon2FRAME.jpg",
@@ -72,51 +62,6 @@ function main(event){
       src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
       startX: 50, startY: 50,
       wide: 300, high : 300
-    }
-
-
-    var condoArray = {
-      src1 : "Art/George Condo/Condo1.jpg",
-      src2 : "Art/George Condo/Condo2.jpg",
-      src3 : "Art/George Condo/Condo3.jpg",
-      src4 : "Art/George Condo/Condo4.jpg",
-      src5 : "Art/George Condo/Condo5.jpg",
-      src6 : "Art/George Condo/Condo6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
-    }
-
-
-    var pollockArray = {
-      src1 : "Art/Jackson Pollock/Pollock1.jpg",
-      src2 : "Art/Jackson Pollock/Pollock2.jpg",
-      src3 : "Art/Jackson Pollock/Pollock3.jpg",
-      src4 : "Art/Jackson Pollock/Pollock4.jpg",
-      src5 : "Art/Jackson Pollock/Pollock5.jpg",
-      src6 : "Art/Jackson Pollock/Pollock6.jpg",
-      startX: 1250, startY: 50,
-      wide: 300, high : 300
-    }
-
-
-    var basquiatArray = {
-      src1 : "Art/Jean Michel Basquiat/Basquiat1.jpg",
-      src2 : "Art/Jean Michel Basquiat/Basquiat2.jpg",
-      src3 : "Art/Jean Michel Basquiat/Basquiat3.jpg",
-      src4 : "Art/Jean Michel Basquiat/Basquiat4.jpg",
-      src5 : "Art/Jean Michel Basquiat/Basquiat5.jpg",
-      src6 : "Art/Jean Michel Basquiat/Basquiat6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
-    }
-
-
-    var haringArray = {
-      src1 : "Art/Keith Haring/Haring1.jpg",
-      src2 : "Art/Keith Haring/Haring2.jpg",
-      src3 : "Art/Keith Haring/Haring3.jpg",
-      src4 : "Art/Keith Haring/Haring4.jpg",
-      src5 : "Art/Keith Haring/Haring5.jpg",
-      src6 : "Art/Keith Haring/Haring6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
     }
 
 
@@ -143,17 +88,6 @@ function main(event){
       wide: 300, high : 300
     }
 
-
-    var avedonArray = {
-      src1 : "Art/Richard Avedon/Avedon1.jpg",
-      src2 : "Art/Richard Avedon/Avedon2.jpg",
-      src3 : "Art/Richard Avedon/Avedon3.jpg",
-      src4 : "Art/Richard Avedon/Avedon4.jpg",
-      src5 : "Art/Richard Avedon/Avedon5.jpg",
-      src6 : "Art/Richard Avedon/Avedon6.jpg",
-      startX: 1650, startY: 50,
-      wide: 300, high : 300
-    }
 
 
 
@@ -263,11 +197,11 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
         state = "left";
-        onX -=30;
+        onX -=500;
       }
       else if(event.keyCode == 68) {
               state = "right";
-              onX +=30;
+              onX +=500;
       }
 
   });

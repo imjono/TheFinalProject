@@ -21,10 +21,11 @@ function main(event){
     context.fillStyle = "white";
     context.fillRect( 0, 0, canvas.width, canvas.height);
   }
+
   function draw(){
     context.drawImage(warhol, warholArray.startX, warholArray.startY, warholArray.wide, warholArray.high);
-    context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high);
-    context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
+    context.drawImage(condo, condoArray.startX, condoArray.startY, condoArray.wide, condoArray.high);
+    // context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high);
 
 
 
@@ -40,8 +41,10 @@ function main(event){
     }
     if(state == "right-stop")
         context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, onX, 500, 250,200)
+
     if(state == "left-stop")
       context.drawImage(move,1142/12 *10,635/4,1142/12,635/4, onX, 500, 250,200)
+
     if(onX < 100)
       location.href = "index.html"
 
@@ -63,28 +66,17 @@ function main(event){
       wide: 300, high : 300
     }
 
+        var  condoArray = {
+          src1 : "Art/George Condo/Condo1.png",
+          src2 : "Art/George Condo/Condo2.png",
+          src3 : "Art/George Condo/Condo3.jpg",
+          src4 : "Art/George Condo/Condo4.jpg",
+          src5 : "Art/George Condo/Condo5.jpg",
+          src6 : "Art/George Condo/Condo6.jpg",
+          startX: 850, startY: 50,
+          wide: 300, high : 300
+        }
 
-    var baconArray = {
-      src1 : "Art/Francis Bacon/Bacon1FRAME.jpg",
-      src2 : "Art/Francis Bacon/Bacon2FRAME.jpg",
-      src3 : "Art/Francis Bacon/Bacon3FRAME.jpg",
-      src4 : "Art/Francis Bacon/Bacon4FRAME.jpg",
-      src4 : "Art/Francis Bacon/Bacon5FRAME.jpg",
-      src5 : "Art/Francis Bacon/Bacon6FRAME.jpg",
-      startX: 50, startY: 50,
-      wide: 300, high : 300
-    }
-
-
-    var condoArray = {
-      src1 : "Art/George Condo/Condo1.jpg",
-      src2 : "Art/George Condo/Condo2.jpg",
-      src3 : "Art/George Condo/Condo3.jpg",
-      src4 : "Art/George Condo/Condo4.jpg",
-      src5 : "Art/George Condo/Condo5.jpg",
-      src6 : "Art/George Condo/Condo6.jpg",
-      x1: 300, y1 : 300, x2 : 300, y2 : 300
-    }
 
 
     var pollockArray = {
@@ -97,6 +89,7 @@ function main(event){
       startX: 1250, startY: 50,
       wide: 300, high : 300
     }
+
 
 
     var basquiatArray = {
@@ -122,8 +115,8 @@ function main(event){
 
 
     var  ernstArray = {
-      src1 : "Art/Max Ernst/Ernst1FRAME.jpg",
-      src2 : "Art/Max Ernst/Ernst2FRAME.jpg",
+      src1 : "Art/Max Ernst/Ernst1FRAME.png",
+      src2 : "Art/Max Ernst/Ernst2FRAME.png",
       src3 : "Art/Max Ernst/Ernst3FRAME.jpg",
       src4 : "Art/Max Ernst/Ernst4FRAME.jpg",
       src5 : "Art/Max Ernst/Ernst5FRAME.jpg",
@@ -133,16 +126,6 @@ function main(event){
     }
 
 
-    var  picassoArray = {
-      src1 : "Art/Pablo Picasso/Picasso1FRAME.jpg",
-      src2 : "Art/Pablo Picasso/Picasso2FRAME.jpg",
-      src3 : "Art/Pablo Picasso/Picasso3FRAME.jpg",
-      src4 : "Art/Pablo Picasso/Picasso4FRAME.jpg",
-      src5 : "Art/Pablo Picasso/Picasso5FRAME.jpg",
-      src6 : "Art/Pablo Picasso/Picasso6FRAME.jpg",
-      startX: 850, startY: 50,
-      wide: 300, high : 300
-    }
 
 
     var avedonArray = {
@@ -161,11 +144,11 @@ function main(event){
 warhol = new Image();
   warhol.src = warholArray.src2;
 
-picasso = new Image();
-  picasso.src = picassoArray.src2;
+condo = new Image();
+  condo.src = condoArray.src2;
 
-  ernst = new Image();
-  ernst.src = ernstArray.src2;
+  // ernst = new Image();
+  // ernst.src = ernstArray.src2;
 
   // pollock = new Image();
   // pollock.src = pollockArray.src2;
@@ -178,41 +161,36 @@ picasso = new Image();
 // warhol.onload = function(){
 //       context.drawImage(warhol, warholArray.startX, warholArray.startY, warholArray.wide, warholArray.high);
 //     }
-// picasso.onload = function(){
-//       context.drawImage(picasso, picassoArray.startX, picassoArray.startY, picassoArray.wide, picassoArray.high)
+// condo.onload = function(){
+//       context.drawImage(condo, condoArray.startX, condoArray.startY, condoArray.wide, condoArray.high)
 // }
 // ernst.onload = function(){
 //       context.drawImage(ernst, ernstArray.startX, ernstArray.startY, ernstArray.wide, ernstArray.high)
 //     }
-// pollock.onload = function(){
-//       context.drawImage(pollock, pollockArray.startX, pollockArray.startY, pollockArray.wide, pollockArray.high)
-// }
-// avedon.onload = function(){
-//       context.drawImage(avedon, avedonArray.startX, avedonArray.startY, avedonArray.wide, avedonArray.high)
-// }
 
+alert('asdf')
 
     canvas.onmousemove = function(evt){
             var x = window.event.screenX;
-      if(evt.x < baconArray.startX + baconArray.wide &&
-        evt.x > baconArray.startX &&
-        evt.y < baconArray.startY + baconArray.high &&
-        evt.y  > baconArray.startY){
+      if(evt.x < warholArray.startX + warholArray.wide &&
+        evt.x > warholArray.startX &&
+        evt.y < warholArray.startY + warholArray.high &&
+        evt.y  > warholArray.startY){
           canvas.style.cursor = "grab";
 
     }
-    else if(evt.x < picassoArray.startX + picassoArray.wide &&
-          evt.x > picassoArray.startX &&
-          evt.y < picassoArray.startY + picassoArray.high &&
-          evt.y  > picassoArray.startY){
+    else if(evt.x < condoArray.startX + condoArray.wide &&
+          evt.x > condoArray.startX &&
+          evt.y < condoArray.startY + condoArray.high &&
+          evt.y  > condoArray.startY){
           canvas.style.cursor = "grab";
     }
-    else if(evt.x < ernstArray.startX + ernstArray.wide &&
-          evt.x > ernstArray.startX &&
-          evt.y < ernstArray.startY + ernstArray.high &&
-          evt.y  > ernstArray.startY){
-          canvas.style.cursor = "grab";
-    }
+    // else if(evt.x < ernstArray.startX + ernstArray.wide &&
+    //       evt.x > ernstArray.startX &&
+    //       evt.y < ernstArray.startY + ernstArray.high &&
+    //       evt.y  > ernstArray.startY){
+    //       canvas.style.cursor = "grab";
+    // }
 
 
 
@@ -227,35 +205,35 @@ picasso = new Image();
 
 
   canvas.onclick = function(evt){
-      if(evt.x < baconArray.startX + baconArray.wide &&
-        evt.x > baconArray.startX &&
-        evt.y < baconArray.startY + baconArray.high &&
-        evt.y  > baconArray.startY){
+      if(evt.x < warholArray.startX + warholArray.wide &&
+        evt.x > warholArray.startX &&
+        evt.y < warholArray.startY + warholArray.high &&
+        evt.y  > warholArray.startY){
 
-      location.href = 'bacon.html';
+      location.href = 'warhol.html';
     }
-    if(evt.x < picassoArray.startX + picassoArray.wide &&
-      evt.x > picassoArray.startX &&
-      evt.y < picassoArray.startY + picassoArray.high &&
-      evt.y  > picassoArray.startY){
+    if(evt.x < condoArray.startX + condoArray.wide &&
+      evt.x > condoArray.startX &&
+      evt.y < condoArray.startY + condoArray.high &&
+      evt.y  > condoArray.startY){
 
-      location.href = 'picasso.html'
+      location.href = 'condo.html'
   }
 
-  if(evt.x < ernstArray.startX + ernstArray.wide &&
-    evt.x > ernstArray.startX &&
-    evt.y < ernstArray.startY + ernstArray.high &&
-    evt.y  > ernstArray.startY){
+//   if(evt.x < ernstArray.startX + ernstArray.wide &&
+//     evt.x > ernstArray.startX &&
+//     evt.y < ernstArray.startY + ernstArray.high &&
+//     evt.y  > ernstArray.startY){
+//
+//     location.href = 'ernst.html'
+// }
 
-    location.href = 'ernst.html'
-}
-
-if(evt.x < pollockArray.startX + pollockArray.wide &&
-  evt.x > pollockArray.startX &&
-  evt.y < pollockArray.startY + pollockArray.high &&
-  evt.y  > pollockArray.startY){
-    alert('this will take you to pollock.html')
-}
+// if(evt.x < pollockArray.startX + pollockArray.wide &&
+//   evt.x > pollockArray.startX &&
+//   evt.y < pollockArray.startY + pollockArray.high &&
+//   evt.y  > pollockArray.startY){
+//     alert('this will take you to pollock.html')
+// }
 
 }
 
