@@ -1,10 +1,8 @@
-function main(it, event){
+function main(event){
   var canvas = document.getElementById('canvas');
   var context = canvas.getContext('2d');
   var move = new Image();
   move.src = "sprite.png";
-
-  it = "5"
 
 
   var x = 0, onX = 0;
