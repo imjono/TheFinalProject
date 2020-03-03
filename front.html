@@ -8,7 +8,65 @@ function main(){
   var context = canvas.getContext('2d');
       var move = new Image();
       move.src = "sprite.png";
-      context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, 0, 500, 250,200)
+
+
+      setInterval(dostuff,100);
+      var onY = 500, x = 0;
+      var state = "up-stop";
+
+      function dostuff(){
+        clearbackground();
+      // updateStuff();
+        draw();
+      }
+
+      function clearbackground(){
+        console.log("clback");
+        context.fillStyle = "white";
+        context.fillRect( 0, 0, canvas.width, canvas.height);
+      }
+
+      function draw(){
+
+
+      if(state == "up-stop"){
+        context.drawImage(move,1142/12 *11,635/4 *3,1142/12,635/4, 600, onY, 250,200);
+      }
+      if(state == "down-stop"){
+        context.drawImage(move,1142/12 *3,0,1142/12,635/4, 600, onY, 250,200);
+      }
+      if(state == "down"){
+        context.drawImage(move,x,0,1142/12,635/4, 600, onY, 250,200);
+        x += 1142/12;
+        x %= 1142;
+        onY += 10;
+      }
+
+      if(state == "up"){
+        context.drawImage(move,x,635/4 *3,1142/12,635/4, 600, onY, 250,200);
+      x += 1142/12;
+      x %= 1142;
+      onY -= 10;
+    }
+
+    }
+
+
+      document.addEventListener('keydown', function(event) {
+          if(event.keyCode == 87) {
+            state = "up";
+          }
+          if(event.keyCode == 83){
+            state = "down"
+          }
+
+      });
+      document.addEventListener('keyup', function(event){
+        if(state == "up")
+          state = "up-stop"
+        if(state == "down")
+          state = "down-stop"
+      });
 }
       </script>
     <meta charset="utf-8">

@@ -3,6 +3,7 @@ function main(event){
   var context = canvas.getContext('2d');
   var move = new Image();
   move.src = "sprite.png";
+    context.drawImage(move,1142/12 *10,635/2,1142/12,635/4, 0, 500, 250,200)
 
 
   var x = 0, onX = 0;
