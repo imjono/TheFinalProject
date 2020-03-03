@@ -48,6 +48,9 @@ function main(event){
     if(onX < 100)
       location.href = "index.html?from=secondIndex"
 
+    if(onX > 1200)
+      alert("Walking into walls is not advised")
+
 
 
 
@@ -228,11 +231,11 @@ condo = new Image();
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
         state = "left";
-        onX -=30;
+        onX -=40;
       }
       else if(event.keyCode == 68) {
               state = "right";
-              onX +=30;
+              onX +=40;
       }
 
   });
