@@ -206,11 +206,11 @@ if(evt.x < pollockArray.startX + pollockArray.wide &&
   document.addEventListener('keydown', function(event) {
       if(event.keyCode == 65) {
         state = "left";
-        onX -=30;
+        onX -=40;
       }
       else if(event.keyCode == 68) {
               state = "right";
-              onX +=30;
+              onX +=40;
       }
 
   });
