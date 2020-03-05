@@ -96,8 +96,8 @@
    }
 
    function erase() {
-       var m = confirm("Are you sure you want to clear your masterpiece?");
-       if (m) {
+       var yess = confirm("Are you sure you want to get rid of your masterpiece?");
+       if (yess) {
            ctx.clearRect(0, 0, w, h);
            document.getElementById("canvasimg").style.display = "none";
        }
