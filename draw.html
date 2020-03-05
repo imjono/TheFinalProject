@@ -1,6 +1,7 @@
 <!--The majority of this code was taken from the internet-->
 <html>
    <script type="text/javascript">
+   alert('Welcome to your studio')
    var canvas, ctx, flag = false,
        prevX = 0,
        currX = 0,
@@ -30,19 +31,26 @@
            findxy('out', e)
        }, false);
 
+       
+
 
 
        window.onmousemove = function (){
            var x = window.event.clientX;
            var y = window.event.clientY;
            if(x <= 570 && x >= 70 && y >= 410 && y <= 460)
-           canvas.style.cursor = "pointer";
+           pointer();
        }
 
 
    }
+   function pointer(){
+     canvas.style.cursor = "pointer";
+   }
+
 
    function color(obj) {
+     pointer();
        switch (obj.id) {
            case "green":
                x = "green";

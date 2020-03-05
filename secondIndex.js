@@ -49,7 +49,7 @@ function main(event){
       location.href = "index.html?from=secondIndex"
 
     if(onX > 1200)
-      alert("Walking into walls is not advised")
+      location.href = "draw.html"
 
 
 
