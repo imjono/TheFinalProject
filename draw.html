@@ -82,6 +82,10 @@
 
    }
 
+   function back(){
+     location.href = "secondIndex.html"
+   }
+
    function draw() {
        ctx.beginPath();
        ctx.moveTo(prevX, prevY);
@@ -153,5 +157,6 @@
        <img id="canvasimg" style="position:absolute;top:10%;left:52%;" style="display:none;">
        <input type="button" value="save" id="btn" size="30" onclick="save()" style="position:absolute;top:55%;left:10%;">
        <input type="button" value="clear" id="clr" size="23" onclick="erase()" style="position:absolute;top:55%;left:15%;">
+       <button type = "button" id = "Back" onclick = "back()">Back</button>
    </body>
    </html>
