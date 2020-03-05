@@ -11,7 +11,7 @@
    var x = "black",
        y = 2;
 
-   function init(event) {
+   function init() {
        canvas = document.getElementById('can');
        ctx = canvas.getContext("2d");
        w = canvas.width;
@@ -30,9 +30,16 @@
            findxy('out', e)
        }, false);
 
-       var mouseXPos = window.event.clientX;
-       if(mouseXPos < 500)
-       alert(mouseXPos)
+
+
+       window.onmousemove = function (){
+           var x = window.event.clientX;
+           var y = window.event.clientY;
+           if(x <= 570 && x >= 70 && y >= 410 && y <= 460)
+           canvas.style.cursor = "pointer";
+       }
+
+
    }
 
    function color(obj) {
@@ -121,7 +128,7 @@
 
    }
    </script>
-   <body onload="init(event)">
+   <body onload="init()">
        <canvas id="can" width="500" height="500" style="position:absolute;top:10%;left:5%;border:2px solid;"></canvas>
        <div style="position:absolute;top:12%;left:43%;">Choose Color</div>
        <div style="position:absolute;top:15%;left:45%;width:10px;height:10px;background:green;" id="green" onclick="color(this)"></div>
